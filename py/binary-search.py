@@ -1,35 +1,26 @@
-import random
+import math
+#   Returns either the index of the location in the array,
+#   or -1 if the array did not contain the targetValue 
 
-# Computer generates a random number for the user to guess.
-randomNumber = random.randint(1, 100)
-num = int
+primes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97]
 
-# for testing 
-# print("randomNumber: ", randomNumber)
-
-min = 1 
-max = 0 
-
-num = int(input("Guess a number between 1-10: "))
-if num == randomNumber:
-    print("Wooohooo! You guessed it!")
-
-while (num != randomNumber ):
-    if num == randomNumber:
-        print("Wooohooo! You guessed it!")
-    elif num < randomNumber:
-        min = num + 1
-        print("Too low.")
-        num = int(input("Guess again: "))
-    elif num > randomNumber:
-        max = num - 1
-        print("Too high!")
-        num = int(input("Guess again: "))
-    
-
-print(f"Wooohooo! You guessed it. The number is {num}!")
+def doSearch(array, targetValue):
+    min = 0
+    max = len(array) - 1
+    guess = math.floor((min+max)/2)
 
 
+    while (array[guess] != targetValue):
+        guess = math.floor((min+max)/2)
+        if max < min:
+            retun -1
+        elif array[guess] < targetValue:
+            min = guess + 1
+        elif array[guess] > targetValue:
+            max = guess - 1
+        elif array[guess] == targetValue:
+            return guess
+            print("You found it!")
 
-
-
+result = doSearch(primes, 73)
+print(f"Prime found at index {result}")
