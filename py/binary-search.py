@@ -1,32 +1,35 @@
 import random
 
-print("Get the computer to guess your number...")
-print("Tell me what two number's to guess beween.")
-min = int(input("min: "))
-max = int(input("max: "))
-# randomNumber = random.randint(min,max)
-magicNumber = int(input("What's the magic number?"))
+# Computer generates a random number for the user to guess.
+randomNumber = random.randint(1, 100)
+num = int
 
+# for testing 
+# print("randomNumber: ", randomNumber)
 
+min = 1 
+max = 0 
 
-while (((min + max)/2).floor ):
+num = int(input("Guess a number between 1-10: "))
+if num == randomNumber:
+    print("Wooohooo! You guessed it!")
 
-# while input_num != random_number:
+while (num != randomNumber ):
+    if num == randomNumber:
+        print("Wooohooo! You guessed it!")
+    elif num < randomNumber:
+        min = num + 1
+        print("Too low.")
+        num = int(input("Guess again: "))
+    elif num > randomNumber:
+        max = num - 1
+        print("Too high!")
+        num = int(input("Guess again: "))
     
 
-#     input_num = int(input("Guess a number between 1-300: "))
-#     if input_num == random_number:
-#         print("Wooohoooo! You guessed it!")
-#     elif min < input_num:
-#         min = input_num + 1
-#         print("Your guess was too low.")
-#     elif input_num > max:
-#         max = input_num - 1 
-#         print("Your guess was too high.") 
+print(f"Wooohooo! You guessed it. The number is {num}!")
 
 
 
 
 
-
-# print(input_num)
