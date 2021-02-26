@@ -1,7 +1,7 @@
 import random
 
 # Computer generates a random number for the user to guess.
-randomNumber = random.randint(1, 100)
+randomNumber = random.randint(1, 20)
 num = int
 
 # for testing 
@@ -10,7 +10,7 @@ num = int
 min = 1 
 max = 0 
 
-num = int(input("Guess a number between 1-10: "))
+num = int(input("Guess a number between 1-20: "))
 if num == randomNumber:
     print("Wooohooo! You guessed it!")
 

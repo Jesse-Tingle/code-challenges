@@ -13,4 +13,4 @@ def runnerUp(arr):
   # prints second to last number in newArray
   print(newArr[-2])
 
-runnerUp(2 3 6 6 5)
+runnerUp([2, 3, 6, 6, 5])
